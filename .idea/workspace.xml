@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94d46659-751e-4cbc-864e-4f151fc3184c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aprox-addressio.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +46,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -66,6 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1638598603542</updated>
       <workItem from="1638598605245" duration="422000" />
+      <workItem from="1638644394513" duration="762000" />
     </task>
     <servers />
   </component>
@@ -82,6 +80,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="540" y="194" key="#CLI_Interpreters" timestamp="1638598798164">
@@ -96,21 +95,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" width="1092" height="766" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1638598814784" />
-    <state width="1877" height="177" key="GridCell.Tab.0.bottom" timestamp="1638599029583">
+    <state width="1877" height="177" key="GridCell.Tab.0.bottom" timestamp="1638645132331">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="177" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1638599029583" />
-    <state width="1877" height="177" key="GridCell.Tab.0.center" timestamp="1638599029582">
+    <state width="1877" height="177" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1638645132331" />
+    <state width="1877" height="177" key="GridCell.Tab.0.center" timestamp="1638645132331">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="177" key="GridCell.Tab.0.center/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1638599029582" />
-    <state width="1877" height="177" key="GridCell.Tab.0.left" timestamp="1638599029582">
+    <state width="1877" height="177" key="GridCell.Tab.0.center/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1638645132331" />
+    <state width="1877" height="177" key="GridCell.Tab.0.left" timestamp="1638645132331">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="177" key="GridCell.Tab.0.left/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1638599029582" />
-    <state width="1877" height="177" key="GridCell.Tab.0.right" timestamp="1638599029582">
+    <state width="1877" height="177" key="GridCell.Tab.0.left/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1638645132331" />
+    <state width="1877" height="177" key="GridCell.Tab.0.right" timestamp="1638645132331">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="177" key="GridCell.Tab.0.right/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1638599029582" />
+    <state width="1877" height="177" key="GridCell.Tab.0.right/-1920.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1638645132331" />
   </component>
 </project>
