@@ -1,6 +1,6 @@
 <?php
 
-function getos() : string { 
+function getos() : string {
 
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
 
@@ -69,11 +69,13 @@ function getbr() : string {
 
 function getip() : string {
 	$keys = array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR');
-	
+
 	foreach($keys as $k)
 	{
 		if (!empty($_SERVER[$k]) && filter_var($_SERVER[$k], FILTER_VALIDATE_IP))
 		{
+
+
 			return $_SERVER[$k];
 		}
 	}
@@ -81,10 +83,18 @@ function getip() : string {
 	return "UNKNOWN";
 }
 
-function getdec() : string {
-	$nums = explode('.', getip());
-
-    return strval(($nums[0] * 16777216) + ($nums[1] * 65536) + ($nums[2] * 256) + ($nums[3] * 1));
+function getdc($ip) : string {
+    return inet_ntop($ip);
 }
 
-echo '{"address":"' . getip() . '","decimal":"' . getdec() . '","system":"' . getos() . '","browser":"' . getbr() . '"}';
+function getvn() : bool {
+    $ip = getip();
+
+    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+echo '{"ipv6":"' . strval(getvn()) . '","address":"' . getip() . '","decimal":"' . getdc(getip()) . '","system":"' . getos() . '","browser":"' . getbr() . '"}';
