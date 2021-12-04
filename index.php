@@ -116,9 +116,27 @@ function dec($ip, $ipv6) : string {
     }
 }
 
-function v6($ip) {
-    
-    return false;
+function v6($ip, $str) {
+    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6)) {
+        $v6 = true;
+    } else {
+        $v6 = false;
+    }
+
+    if (!$v6) {
+        if ($str) {
+            return 'ipv4';
+        } else {
+            return false;
+        }
+    } else {
+        if ($str) {
+            return 'ipv6';
+        } else {
+            return true;
+        }
+    }
+
 }
 
-echo '{ "version":"' . v6(ip()) . '", "address":"'. ip() . '", "decimal":"'. dec(ip(), v6(ip())) . '", "system":"'. os() . '", "browser":"'. br() . '" }';
+echo '{ "version":"' . v6(ip(), true) . '", "address":"'. ip() . '", "decimal":"'. dec(ip(), v6(ip(), false)) . '", "system":"'. os() . '", "browser":"'. br() . '" }';
