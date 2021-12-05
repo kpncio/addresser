@@ -1,5 +1,7 @@
 <?php
 
+require 'vendor/autoload.php';
+
 function os() : string {
 
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
@@ -68,17 +70,27 @@ function br() : string {
 }
 
 function ip() : string {
-	$keys = array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR');
+    if(!empty($_GET["ip"])) {
+        if (filter_var($_GET["ip"], FILTER_VALIDATE_IP,  FILTER_FLAG_IPV4)) {
+            return $_GET["ip"];
+        } else {
+            if (filter_var($_GET["ip"], FILTER_VALIDATE_IP,  FILTER_FLAG_IPV6)) {
+                return $_GET["ip"];
+            } else {
+                return '0.0.0.0';
+            }
+        }
+    } else {
+        $keys = array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR');
 
-	foreach($keys as $k)
-	{
-		if (!empty($_SERVER[$k]) && filter_var($_SERVER[$k], FILTER_VALIDATE_IP))
-		{
-
-
-			return $_SERVER[$k];
-		}
-	}
+        foreach($keys as $k)
+        {
+            if (!empty($_SERVER[$k]) && filter_var($_SERVER[$k], FILTER_VALIDATE_IP))
+            {
+                return $_SERVER[$k];
+            }
+        }
+    }
 
 	return "unknown";
 }
@@ -125,13 +137,13 @@ function v6($ip, $str) {
 
     if (!$v6) {
         if ($str) {
-            return 'ipv4';
+            return '4';
         } else {
             return false;
         }
     } else {
         if ($str) {
-            return 'ipv6';
+            return '6';
         } else {
             return true;
         }
@@ -139,4 +151,4 @@ function v6($ip, $str) {
 
 }
 
-echo '{ "version":"' . v6(ip(), true) . '", "address":"'. ip() . '", "decimal":"'. dec(ip(), v6(ip(), false)) . '", "system":"'. os() . '", "browser":"'. br() . '" }';
+echo '{ "version": "' . v6(ip(), true) . '", "address": "'. ip() . '", "decimal": "'. dec(ip(), v6(ip(), false)) . '", "system": "'. os() . '", "browser": "'. br() . '" }';
