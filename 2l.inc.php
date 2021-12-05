@@ -14,7 +14,7 @@ function sdb($ip6, $dec, $tbl, $col, $ary) {
     }
 
     // IP2Location uses the MyISAM engine by default. It is recommended to upgrade to InnoDB or ARIA engines or use MEMORY (~8.5Gb)...
-    $query = "SELECT * FROM `ip2location_{$tbl}{$ver}` WHERE `ip_from` <= {$dec} AND `ip_to` >= {$dec} ORDER BY `ip_from` DESC;";
+    $query = "SELECT * FROM `ip2location_{$tbl}{$ver}` WHERE `ip_to` >= {$dec} LIMIT 1;";
 
     if ($result = $con -> query($query)) {
         $row = $result -> fetch_assoc();
