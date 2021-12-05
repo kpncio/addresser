@@ -1,7 +1,5 @@
 <?php
 
-require 'vendor/autoload.php';
-
 function os() : string {
 
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
