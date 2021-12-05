@@ -5,6 +5,8 @@ function zone($con, $ip6, $dec) {
 }
 
 function country($con, $ip6, $dec) {
+    $response = "unknown";
+
     if (!$ip6) {
         $ver = "";
     } else {
@@ -14,10 +16,16 @@ function country($con, $ip6, $dec) {
     $query = "SELECT * FROM `ip2location_db11{$ver}` WHERE `ip_from` <= {$dec} AND `ip_to` >= {$dec};";
 
     if ($result = $con -> query($query)) {
-        return $result -> fetch_array; # join(" ", $result -> fetch_array);
-    } else {
-        return "unknown";
+        $row = $result -> fetch_assoc();
+
+        $response = $row[2];
+
+        $result -> free_result();
     }
+
+    $con -> close();
+
+    return $response;
 }
 
 function region($con, $ip6, $dec) {
