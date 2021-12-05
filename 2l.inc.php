@@ -13,12 +13,13 @@ function country($con, $ip6, $dec) {
         $ver = "_ipv6";
     }
 
-    $query = "SELECT * FROM `ip2location_db11{$ver}` WHERE `ip_from` <= {$dec} AND `ip_to` >= {$dec};";
+    $query = "SELECT * FROM `ip2location_db11{$ver}` WHERE `ip_from` <= {$dec} AND `ip_to` >= {$dec} ORDER BY `ip_from` DESC;";
 
     if ($result = $con -> query($query)) {
         $row = $result -> fetch_assoc();
 
-        $response = $row[2];
+        $response = strval($row[2]);
+        # $response = join(", ", $row);
 
         $result -> free_result();
     }
