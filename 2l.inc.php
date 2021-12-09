@@ -13,8 +13,18 @@ function sdb($ip6, $dec, $tbl, $col, $ary) {
         $ver = "_ipv6";
     }
 
+    // USE ip2location;
+    // CREATE TABLE ip2location_version_memory SELECT * FROM ip2location_version WHERE 1=2;
+    // ALTER TABLE ip2location_version_memory ENGINE=memory;
+    // INSERT INTO ip2location_version_memory SELECT * FROM ip2location_version;
+
     // IP2Location uses the MyISAM engine by default. It is recommended to upgrade to InnoDB or ARIA engines or use MEMORY (~8.5Gb)...
-    $query = "SELECT * FROM `ip2location_{$tbl}{$ver}` WHERE `ip_to` >= {$dec} LIMIT 1;";
+    try {
+        $query = "SELECT * FROM `ip2location_{$tbl}{$ver}_memory` WHERE `ip_to` >= {$dec} LIMIT 1;";
+    } catch (exception $e) {
+        $query = "SELECT * FROM `ip2location_{$tbl}{$ver}` WHERE `ip_to` >= {$dec} LIMIT 1;";
+    }
+
 
     if ($result = $con -> query($query)) {
         $row = $result -> fetch_assoc();
