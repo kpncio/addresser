@@ -20,8 +20,12 @@ function sdb($ip6, $dec, $tbl, $col, $ary) {
 
     // IP2Location uses the MyISAM engine by default. It is recommended to upgrade to InnoDB or ARIA engines or use MEMORY (~8.5Gb)...
     try {
+        $mem = true;
+
         $query = "SELECT * FROM `ip2location_{$tbl}{$ver}_memory` WHERE `ip_to` >= {$dec} LIMIT 1;";
     } catch (exception $e) {
+        $mem = false;
+
         $query = "SELECT * FROM `ip2location_{$tbl}{$ver}` WHERE `ip_to` >= {$dec} LIMIT 1;";
     }
 
@@ -33,6 +37,7 @@ function sdb($ip6, $dec, $tbl, $col, $ary) {
         // "$response = $row[$col]" didn't work...
         $response = implode(",", $row);
         $response = explode(",", $response);
+        array_push($response, $mem);
         if (!$ary) {
             $response = $response[$col];
         }
@@ -52,42 +57,42 @@ function all($ip6, $dec) {
     return array($loc, $asn);
 }
 
-function zone($ip6, $dec) {
-    return sdb($ip6, $dec, "db11", 9, false);
-}
+//function zone($ip6, $dec) {
+//    return sdb($ip6, $dec, "db11", 9, false);
+//}
 
-function country($ip6, $dec) {
-    return sdb($ip6, $dec, "db11", 2, false);
-}
+//function country($ip6, $dec) {
+//    return sdb($ip6, $dec, "db11", 2, false);
+//}
 
-function region($ip6, $dec) {
-    return sdb($ip6, $dec, "db11", 4, false);
-}
+//function region($ip6, $dec) {
+//    return sdb($ip6, $dec, "db11", 4, false);
+//}
 
-function city($ip6, $dec) {
-    return sdb($ip6, $dec, "db11", 5, false);
-}
+//function city($ip6, $dec) {
+//    return sdb($ip6, $dec, "db11", 5, false);
+//}
 
-function zip($ip6, $dec) {
-    return sdb($ip6, $dec, "db11", 8, false);
-}
+//function zip($ip6, $dec) {
+//    return sdb($ip6, $dec, "db11", 8, false);
+//}
 
-function latitude($ip6, $dec) {
-    return sdb($ip6, $dec, "db11", 6, false);
-}
+//function latitude($ip6, $dec) {
+//    return sdb($ip6, $dec, "db11", 6, false);
+//}
 
-function longitude($ip6, $dec) {
-    return sdb($ip6, $dec, "db11", 7, false);
-}
+//function longitude($ip6, $dec) {
+//    return sdb($ip6, $dec, "db11", 7, false);
+//}
 
-function cidr($ip6, $dec) {
-    return sdb($ip6, $dec, "asn", 2, false);
-}
+//function cidr($ip6, $dec) {
+//    return sdb($ip6, $dec, "asn", 2, false);
+//}
 
-function asn($ip6, $dec) {
-    return sdb($ip6, $dec, "asn", 3, false);
-}
+//function asn($ip6, $dec) {
+//    return sdb($ip6, $dec, "asn", 3, false);
+//}
 
-function isp($ip6, $dec) {
-    return sdb($ip6, $dec, "asn", 4, false);
-}
+//function isp($ip6, $dec) {
+//    return sdb($ip6, $dec, "asn", 4, false);
+//}

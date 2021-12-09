@@ -32,5 +32,8 @@ echo "\t \t \"longitude\": \"{$ip2l[0][7]}\", \n";
 echo "\t \t \"cidr\": \"{$ip2l[1][2]}\", \n";
 echo "\t \t \"asn\": \"{$ip2l[1][3]}\", \n";
 echo "\t \t \"isp\": \"{$ip2l[1][4]}\" \n";
+echo "\t }, \"retentiveness\": { \n";
+echo "\t \t \"db11\": \"{$ip2l[0][10]}\", \n";
+echo "\t \t \"asn\": \"{$ip2l[1][5]}\", \n";
 echo "\t } \n";
 echo "} \n";
