@@ -36,19 +36,19 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
     echo "\t } \n";
     echo "} \n";
 } else {
-    echo '
+    echo "
     <!doctype html>
-    <html lang="en">
+    <html lang='en'>
         <head>
             <title>APROX Addressio</title>
-            <meta charset="UTF-8">
-            <meta name="theme-color" content="#FF7B2F">
-            <meta name="author" content="APROX Project">
-            <meta name="description" content="APROX Project: Addressio">
-            <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-            <meta name="keywords" content="APROX Project, APROX, AAOS, Albie, Addressio">
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <link href="https://cdn.aprox.us/img/aprox3/aproxiconorg.png" rel="icon">
+            <meta charset='UTF-8'>
+            <meta name='theme-color' content='#FF7B2F'>
+            <meta name='author' content='APROX Project'>
+            <meta name='description' content='APROX Project: Addressio'>
+            <meta name='viewport' content='width=device-width, height=device-height, initial-scale=1.0'>
+            <meta name='keywords' content='APROX Project, APROX, AAOS, Albie, Addressio'>
+            <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+            <link href='https://cdn.aprox.us/img/aprox3/aproxiconorg.png' rel='icon'>
             <style>
                 html {
                     margin: 0;
@@ -67,7 +67,7 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
                     background: linear-gradient(232deg, rgba(255,251,0,1) 0%, rgba(226,30,14,1) 100%);
                     background: -moz-linear-gradient(232deg, rgba(255,251,0,1) 0%, rgba(226,30,14,1) 100%);
                     background: -webkit-linear-gradient(232deg, rgba(255,251,0,1) 0%, rgba(226,30,14,1) 100%);
-                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fffb00", endColorstr="#e21e0e", GradientType=1);
+                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffb00', endColorstr='#e21e0e', GradientType=1);
                     background-attachment: fixed;
                 }
     
@@ -81,10 +81,10 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
             </style>
         </head>
         <body>
-            <iframe src="https://cdn.aprox.us/lib/addressio/frame.html?version={$version}&address={$address}&decimal={$decimal}&system={$system}&browser={$browser}&isp={$ip2l[1][4]}&cidr={$ip2l[1][2]}&asn={$ip2l[1][3]}&time={$ip2l[0][9]}&country={$ip2l[0][2]}&region={$ip2l[0][4]}&city={$ip2l[0][5]}&zip={$ip2l[0][8]}&lat={$ip2l[0][6]}&long={$ip2l[0][7]}" frameborder="0">
-            Loading GUI. For plain JSON responses do not use a user-agent or set the "api" query string...
+            <iframe src='https://cdn.aprox.us/lib/addressio/frame.html?version={$version}&address={$address}&decimal={$decimal}&system={$system}&browser={$browser}&isp={$ip2l[1][4]}&cidr={$ip2l[1][2]}&asn={$ip2l[1][3]}&time={$ip2l[0][9]}&country={$ip2l[0][2]}&region={$ip2l[0][4]}&city={$ip2l[0][5]}&zip={$ip2l[0][8]}&lat={$ip2l[0][6]}&long={$ip2l[0][7]}' frameborder='0'>
+            Loading GUI. For plain JSON responses do not use a user-agent or set the 'api' query string...
             </iframe>
         </body>
     </html>
-    ';
+    ";
 }
