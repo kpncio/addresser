@@ -11,7 +11,7 @@ $browser = br();
 
 $ip2l = all(v6(ip(), false), dc(ip(), v6(ip(), false)));
 
-if ($browser != "unknown" || $_GET["api"] == "true") {
+if ($browser == "unknown" || $_GET["api"] == "true") {
     header('Content-Type: text/plain');
 
     echo "{ \n";
