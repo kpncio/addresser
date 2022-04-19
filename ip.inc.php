@@ -6,29 +6,29 @@ function os() : string {
     $platform = "unknown";
 
     $os_array = array(
-        '/windows nt 10/i'      =>  'win-10',
-        '/windows nt 6.3/i'     =>  'win-8.1',
-        '/windows nt 6.2/i'     =>  'win-8',
-        '/windows nt 6.1/i'     =>  'win-7',
-        '/windows nt 6.0/i'     =>  'win-vista',
-        '/windows nt 5.2/i'     =>  'win-2003',
-        '/windows nt 5.1/i'     =>  'win-xp',
-        '/windows xp/i'         =>  'win-xp',
-        '/windows nt 5.0/i'     =>  'win-2000',
-        '/windows me/i'         =>  'win-me',
-        '/win98/i'              =>  'win-98',
-        '/win95/i'              =>  'win-95',
-        '/win16/i'              =>  'win-3',
-        '/macintosh|mac os x/i' =>  'macos-x',
-        '/mac_powerpc/i'        =>  'macos-9',
-        '/linux/i'              =>  'linux',
-        '/ubuntu/i'             =>  'ubuntu',
-        '/iphone/i'             =>  'iphone',
-        '/ipod/i'               =>  'ipod',
-        '/ipad/i'               =>  'ipad',
-        '/android/i'            =>  'android',
-        '/blackberry/i'         =>  'blackberry',
-        '/webos/i'              =>  'webos'
+        '/windows nt 10/i'      =>  'Windows 10/11',
+        '/windows nt 6.3/i'     =>  'Windows 8.1',
+        '/windows nt 6.2/i'     =>  'Windows 8',
+        '/windows nt 6.1/i'     =>  'Windows 7',
+        '/windows nt 6.0/i'     =>  'Windows Vista',
+        '/windows nt 5.2/i'     =>  'Windows 2003',
+        '/windows nt 5.1/i'     =>  'Windows XP',
+        '/windows xp/i'         =>  'Windows XP',
+        '/windows nt 5.0/i'     =>  'Windows 2000',
+        '/windows me/i'         =>  'Windows ME',
+        '/win98/i'              =>  'Windows 98',
+        '/win95/i'              =>  'Windows 95',
+        '/win16/i'              =>  'Windows 3.1',
+        '/macintosh|mac os x/i' =>  'Mac OS X',
+        '/mac_powerpc/i'        =>  'Mac OS 9',
+        '/linux/i'              =>  'Linux',
+        '/ubuntu/i'             =>  'Ubuntu',
+        '/iphone/i'             =>  'iPhone',
+        '/ipod/i'               =>  'iPod',
+        '/ipad/i'               =>  'iPad',
+        '/android/i'            =>  'Android',
+        '/blackberry/i'         =>  'Blackberry',
+        '/webos/i'              =>  'WebOS'
     );
 
     foreach ( $os_array as $regex => $value ) {
@@ -45,16 +45,16 @@ function br() : string {
     $browser = "unknown";
 
     $browser_array = array(
-        '/msie/i'       =>  'ie',
-        '/firefox/i'    =>  'firefox',
-        '/safari/i'     =>  'safari',
-        '/chrome/i'     =>  'chrome',
-        '/edge/i'       =>  'edge',
-        '/opera/i'      =>  'opera',
-        '/netscape/i'   =>  'netscape',
-        '/maxthon/i'    =>  'maxthon',
-        '/konqueror/i'  =>  'konqueror',
-        '/mobile/i'     =>  'mobile'
+        '/msie/i'       =>  'Internet Explorer',
+        '/firefox/i'    =>  'Firefox',
+        '/safari/i'     =>  'Safari',
+        '/chrome/i'     =>  'Chrome',
+        '/edge/i'       =>  'Edge',
+        '/opera/i'      =>  'Opera',
+        '/netscape/i'   =>  'Netscape',
+        '/maxthon/i'    =>  'Maxthon',
+        '/konqueror/i'  =>  'Konqueror',
+        '/mobile/i'     =>  'Mobile'
     );
 
     foreach ( $browser_array as $regex => $value ) {
