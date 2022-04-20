@@ -55,7 +55,9 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
                     padding: 0;
                     height: 100%;
                     max-width: 100%;
-                    overflow-x: hidden;
+					max-height: 100%;
+					overflow-x: hidden;
+					overflow-y: hidden;
                     scroll-behavior: smooth;
                 }
     

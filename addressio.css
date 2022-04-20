@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    padding: 20px;
+    padding: 20px 0;
     background: #FF7B2F;
     font-family: "Roboto Mono", monospace;
     background: linear-gradient(232deg, rgba(255,251,0,1) 0%, rgba(226,30,14,1) 100%);
@@ -22,7 +22,7 @@ main {
     margin: auto;
     color: black;
     border-radius: 20px;
-    width: min(80vw, 500px);
+    width: clamp(350px, 80vw, 500px);
     background-color: white;
     border: solid black 1px;
 }
