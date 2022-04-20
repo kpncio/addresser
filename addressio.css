@@ -8,6 +8,7 @@ html {
 }
 
 body {
+	margin: 0;
     padding: 20px 0;
     background: #FF7B2F;
     font-family: "Roboto Mono", monospace;
