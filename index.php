@@ -213,31 +213,31 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 
 					<div class='container'>
 						<p><strong>Generated Data:</strong></p><br>
-						<p>&rtrif; IP Version<sup><a id='i1'>?</a></sup></p> <p class='data'>{$version}</p><br>
-						<p>&rtrif; IP Address<sup><a id='i2'>?</a></sup></p> <p class='data'>{$address}</p><br>
-						<p>&rtrif; IP Decimal<sup><a id='i3'>?</a></sup></p> <p class='data'>{$decimal}</p><br>
-						<p>&rtrif; System<sup><a id='i4'>?</a></sup></p> <p class='data'>{$system}</p><br>
-						<p>&rtrif; Browser<sup><a id='i5'>?</a></sup></p> <p class='data'>{$browser}</p><br>
+						<p>&rtrif; IP Version<sup><a id='i1'>?</a></sup></p> <input type='text' class='data' value='{$version}'/><br>
+						<p>&rtrif; IP Address<sup><a id='i2'>?</a></sup></p> <input type='text' class='data' value='{$address}'/><br>
+						<p>&rtrif; IP Decimal<sup><a id='i3'>?</a></sup></p> <input type='text' class='data' value='{$decimal}'/><br>
+						<p>&rtrif; System<sup><a id='i4'>?</a></sup></p> <input type='text' class='data' value='{$system}'/><br>
+						<p>&rtrif; Browser<sup><a id='i5'>?</a></sup></p> <input type='text' class='data' value='{$browser}'/><br>
 					</div>
 
 					<br>
 					<div class='container'>
 						<p><strong>Provider Data<sup><a id='i9'>?</a></sup>:</strong></p><br>
-						<p>&rtrif; ISP<sup><a id='i6'>?</a></sup></p> <p class='data'>{$ip2l[1][4]}</p><br>
-						<p>&rtrif; CIDR<sup><a id='i7'>?</a></sup></p> <p class='data'>{$ip2l[1][2]}</p><br>
-						<p>&rtrif; ASN<sup><a id='i8'>?</a></sup></p> <p class='data'>{$ip2l[1][3]}</p><br>
+						<p>&rtrif; ISP<sup><a id='i6'>?</a></sup></p> <input type='text' class='data' value='{$ip2l[1][4]}'/><br>
+						<p>&rtrif; CIDR<sup><a id='i7'>?</a></sup></p> <input type='text' class='data' value='{$ip2l[1][2]}'/><br>
+						<p>&rtrif; ASN<sup><a id='i8'>?</a></sup></p> <input type='text' class='data' value='{$ip2l[1][3]}'/><br>
 					</div>
 
 					<br>
 					<div class='container'>
 						<p><strong>Location Data<sup><a id='i0'>?</a></sup>:</strong></p><br>
-						<p>&rtrif; Time Zone</p> <p class='data'>{$ip2l[0][9]}</p><br>
-						<p>&rtrif; Country</p> <p class='data'>{$ip2l[0][2]}</p><br>
-						<p>&rtrif; Region</p> <p class='data'>{$ip2l[0][4]}</p><br>
-						<p>&rtrif; City</p> <p class='data'>{$ip2l[0][5]}</p><br>
-						<p>&rtrif; ZIP</p> <p class='data'>{$ip2l[0][8]}</p><br>
-						<p>&rtrif; Latitude</p> <p class='data'>{$ip2l[0][6]}</p><br>
-						<p>&rtrif; Longitude</p> <p class='data'>{$ip2l[0][7]}</p><br>
+						<p>&rtrif; Time Zone</p> <input type='text' class='data' value='{$ip2l[0][9]}'/><br>
+						<p>&rtrif; Country</p> <input type='text' class='data' value='{$ip2l[0][2]}'/><br>
+						<p>&rtrif; Region</p> <input type='text' class='data' value='{$ip2l[0][4]}'/><br>
+						<p>&rtrif; City</p> <input type='text' class='data' value='{$ip2l[0][5]}'/><br>
+						<p>&rtrif; ZIP</p> <input type='text' class='data' value='{$ip2l[0][8]}'/><br>
+						<p>&rtrif; Latitude</p> <input type='text' class='data' value='{$ip2l[0][6]}'/><br>
+						<p>&rtrif; Longitude</p> <input type='text' class='data' value='{$ip2l[0][7]}'/><br>
 					</div>
 
 					<br>
