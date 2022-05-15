@@ -29,6 +29,8 @@ main {
 }
 
 header {
+    padding: 5px;
+    text-align: center;
     border-bottom: solid black 1px;
 }
 
@@ -40,12 +42,6 @@ header img {
     margin: 10px auto;
     text-align: center;
     text-decoration: none;
-}
-
-footer {
-    padding: 5px;
-    text-align: center;
-    border-top: solid black 1px;
 }
 
 p {
