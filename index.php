@@ -210,38 +210,98 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 							<img src='https://content.kpnc.io/img/kpnc/logolight.webp' alt='~KPNC~'>
 						</a>
 		
-						<small>2022 &copy; KPNC Technology // Addressio: <a href='https://github.com/kpncio/addressio' target='_blank'>GitHub</a></small>
+						<small>2022 &copy; KPNC Technology // Addresser: <a href='https://github.com/kpncio/addresser' target='_blank'>GitHub</a></small>
 					</header>
 		
 					<div class='container'>
 						<p><strong>Generated Data:</strong></p><br>
-						<p>&rtrif; IP Version<sup><a id='i1'>?</a></sup></p> <input type='text' class='data' value='{$version}'/><br>
-						<p>&rtrif; IP Address<sup><a id='i2'>?</a></sup></p> <input type='text' class='data' value='{$address}'/><br>
-						<p>&rtrif; IP Decimal<sup><a id='i3'>?</a></sup></p> <input type='text' class='data' value='{$decimal}'/><br>
-						<p>&rtrif; System<sup><a id='i4'>?</a></sup></p> <input type='text' class='data' value='{$system}'/><br>
-						<p>&rtrif; Browser<sup><a id='i5'>?</a></sup></p> <input type='text' class='data' value='{$browser}'/><br>
+
+						<table>
+							<tbody>
+								<tr>
+									<td><p>&rtrif; IP Version<sup><a id='i1'>?</a></sup></p></td>
+									<td><input type='text' class='data' value='{$version}'/></td>
+								</tr>
+								<tr>
+									<td><p>&rtrif; IP Address<sup><a id='i2'>?</a></sup></p></td>
+									<td><input type='text' class='data' value='{$address}'/></td>
+								</tr>
+								<tr>
+									<td><p>&rtrif; IP Decimal<sup><a id='i3'>?</a></sup></p></td>
+									<td><input type='text' class='data' value='{$decimal}'/></td>
+								</tr>
+								<tr>
+									<td><p>&rtrif; System<sup><a id='i4'>?</a></sup></p></td>
+									<td><input type='text' class='data' value='{$system}'/></td>
+								</tr>
+								<tr>
+									<td><p>&rtrif; Browser<sup><a id='i5'>?</a></sup></p></td>
+									<td><input type='text' class='data' value='{$browser}'/></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 		
 					<br>
 					<div class='container'>
 						<p><strong>Provider Data<sup><a id='i9'>?</a></sup>:</strong></p><br>
-						<p>&rtrif; ISP<sup><a id='i6'>?</a></sup></p> <input type='text' class='data' value='{$ip2l[1][4]}'/><br>
-						<p>&rtrif; CIDR<sup><a id='i7'>?</a></sup></p> <input type='text' class='data' value='{$ip2l[1][2]}'/><br>
-						<p>&rtrif; ASN<sup><a id='i8'>?</a></sup></p> <input type='text' class='data' value='{$ip2l[1][3]}'/><br>
+
+						<table>
+							<tbody>
+								<tr>
+									<td><p>&rtrif; ISP<sup><a id='i6'>?</a></sup></p></td>
+									<td><input type='text' class='data' value='{$ip2l[1][4]}'/></td>
+								</tr>
+								<tr>
+									<td><p>&rtrif; CIDR<sup><a id='i7'>?</a></sup></p></td>
+									<td><input type='text' class='data' value='{$ip2l[1][2]}'/></td>
+								</tr>
+								<tr>
+									<td><p>&rtrif; ASN<sup><a id='i8'>?</a></sup></p></td>
+									<td><input type='text' class='data' value='{$ip2l[1][3]}'/></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 		
 					<br>
 					<div class='container'>
 						<p><strong>Location Data<sup><a id='i0'>?</a></sup>:</strong></p><br>
-						<p>&rtrif; Time Zone</p> <input type='text' class='data' value='{$ip2l[0][9]}'/><br>
-						<p>&rtrif; Country</p> <input type='text' class='data' value='{$ip2l[0][2]}'/><br>
-						<p>&rtrif; Region</p> <input type='text' class='data' value='{$ip2l[0][4]}'/><br>
-						<p>&rtrif; City</p> <input type='text' class='data' value='{$ip2l[0][5]}'/><br>
-						<p>&rtrif; ZIP</p> <input type='text' class='data' value='{$ip2l[0][8]}'/><br>
-						<p>&rtrif; Latitude</p> <input type='text' class='data' value='{$ip2l[0][6]}'/><br>
-						<p>&rtrif; Longitude</p> <input type='text' class='data' value='{$ip2l[0][7]}'/><br>
+
+						<table>
+							<tbody>
+								<tr>
+									<td><p>&rtrif; Time Zone</p></td>
+									<td><input type='text' class='data' value='{$ip2l[0][9]}'/></td>
+								</tr>
+								<tr>
+									<td><p>&rtrif; Country</p></td>
+									<td><input type='text' class='data' value='{$ip2l[0][2]}'/></td>
+								</tr>
+								<tr>
+									<td><p>&rtrif; Region</p></td>
+									<td><input type='text' class='data' value='{$ip2l[0][4]}'/></td>
+								</tr>
+								<tr>
+									<td><p>&rtrif; City</p></td>
+									<td><input type='text' class='data' value='{$ip2l[0][5]}'/></td>
+								</tr>
+								<tr>
+									<td><p>&rtrif; ZIP</p></td>
+									<td><input type='text' class='data' value='{$ip2l[0][8]}'/></td>
+								</tr>
+								<tr>
+									<td><p>&rtrif; Latitude</p></td>
+									<td><input type='text' class='data' value='{$ip2l[0][6]}'/></td>
+								</tr>
+								<tr>
+									<td><p>&rtrif; Longitude</p></td>
+									<td><input type='text' class='data' value='{$ip2l[0][7]}'/></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
-		
+
 					<br>
 					<div class='container'>
 						<p><strong>Mapped Visualization:</strong></p><br>
@@ -258,12 +318,12 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 					var map = L.map('map').setView([{$ip2l[0][6]}, {$ip2l[0][7]}], 11);
 							
 					var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-						maxZoom: 18,
-						attribution: \"Map Data & Imagery &copy; <a href='https://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a> & <a href='https://www.mapbox.com/' target='_blank'>Mapbox</a>\",
-						id: 'mapbox/streets-v11',
-						tileSize: 512,
-						zoomOffset: -1,
-						accessToken: 'pk.eyJ1IjoiYWxiaWU2NTQ0IiwiYSI6ImNsMjV1YmdmMTJkcTMza3BkZTdmbnY1bTcifQ.YpT_p-H1WckYccV8_HoLHg'
+					 	maxZoom: 18,
+					 	attribution: \"Map Data & Imagery &copy; <a href='https://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a> & <a href='https://www.mapbox.com/' target='_blank'>Mapbox</a>\",
+					 	id: 'mapbox/streets-v11',
+					 	tileSize: 512,
+					 	zoomOffset: -1,
+					 	accessToken: 'pk.eyJ1IjoiYWxiaWU2NTQ0IiwiYSI6ImNsMjV1YmdmMTJkcTMza3BkZTdmbnY1bTcifQ.YpT_p-H1WckYccV8_HoLHg'
 					}).addTo(map);
 		
 					var circle = L.circle([{$ip2l[0][6]}, {$ip2l[0][7]}], {
