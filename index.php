@@ -207,7 +207,7 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 				<main>
 					<header>
 						<a href='https://www.kpnc.io'>
-							<img src='https://content.kpnc.io/img/kpnc/logolight.webp' alt='~KPNC~'>
+							<img src='https://content.kpnc.io/img/kpnc/logodark.webp' alt='~KPNC~'>
 						</a>
 		
 						<small>2022 &copy; KPNC Technology // Addresser: <a href='https://github.com/kpncio/addresser' target='_blank'>GitHub</a></small>
@@ -320,15 +320,15 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 					var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 					 	maxZoom: 18,
 					 	attribution: \"Map Data & Imagery &copy; <a href='https://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a> & <a href='https://www.mapbox.com/' target='_blank'>Mapbox</a>\",
-					 	id: 'mapbox/streets-v11',
+					 	id: 'mapbox/dark-v10',
 					 	tileSize: 512,
 					 	zoomOffset: -1,
 					 	accessToken: 'pk.eyJ1IjoiYWxiaWU2NTQ0IiwiYSI6ImNsMjV1YmdmMTJkcTMza3BkZTdmbnY1bTcifQ.YpT_p-H1WckYccV8_HoLHg'
 					}).addTo(map);
 		
 					var circle = L.circle([{$ip2l[0][6]}, {$ip2l[0][7]}], {
-						color: '#FF7B2F',
-						fillColor: '#FF7B2F',
+						color: '#1472FC',
+						fillColor: '#1472FC',
 						fillOpacity: 0.5,
 						radius: 5000
 					}).addTo(map);
