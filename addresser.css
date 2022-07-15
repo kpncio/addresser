@@ -10,34 +10,33 @@ html {
 body {
 	margin: 0;
     padding: 20px 0;
-    background: #FF7B2F;
+    background: #1472FC;
     font-family: "Roboto Mono", monospace;
-    background: linear-gradient(232deg, rgba(255,251,0,1) 0%, rgba(226,30,14,1) 100%);
-    background: -moz-linear-gradient(232deg, rgba(255,251,0,1) 0%, rgba(226,30,14,1) 100%);
-    background: -webkit-linear-gradient(232deg, rgba(255,251,0,1) 0%, rgba(226,30,14,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fffb00", endColorstr="#e21e0e", GradientType=1);
+	background: -moz-linear-gradient(165deg, rgba(20,252,195,1) 0%, rgba(136,20,252,1) 100%);
+	background: -webkit-linear-gradient(165deg, rgba(20,252,195,1) 0%, rgba(136,20,252,1) 100%);
+	background: linear-gradient(165deg, rgba(20,252,195,1) 0%, rgba(136,20,252,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#14fcc3",endColorstr="#8814fc",GradientType=1);
     background-attachment: fixed;
 }
 
 main {
     margin: auto;
-    color: black;
+    color: white;
     border-radius: 20px;
+	background-color: #343332;
     width: clamp(350px, 80vw, 500px);
-    background-color: white;
-    border: solid black 1px;
 }
 
 header {
     padding: 5px;
 	text-align: center;
-    border-bottom: solid black 1px;
+    border-bottom: solid grey 1px;
 }
 
 header img {
     width: auto;
     height: 30px;
-    color: black;
+    color: white;
     display: block;
     margin: 10px auto;
     text-align: center;
@@ -65,7 +64,7 @@ p {
 }
 
 a {
-	color: #007ACC;
+	color: #1472FC;
     cursor: pointer;
     text-decoration: none;
 }
@@ -88,10 +87,12 @@ small {
     border: 0;
     width: 100%;
     margin: 10px;
+	color: white;
     float: right;
     line-height: 0;
     font-size: 14px;
     text-align: right;
+	background-color: #343332;
     font-family: "Roboto Mono", monospace;
 }
 
@@ -110,13 +111,13 @@ small {
 
 .modal-content {
     margin: auto;
+	color: white;
     position: relative;
     border-radius: 20px;
     animation-name: modal;
     width: min(70vw, 450px);
     animation-duration: 0.4s;
-    border: solid black 1px;
-    background-color: white;
+	background-color: #343332;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
@@ -136,6 +137,12 @@ small {
     cursor: pointer;
     font-size: 28px;
     font-weight: bold;
+}
+
+#map {
+	border-radius: 10px;
+	border: solid grey 1px;
+	background-color: #343332;
 }
 
 @keyframes modal {
