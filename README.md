@@ -1,4 +1,6 @@
-# Addressio (Web API)
+# Addressio
+
+*(Apache HTTPD, IP2Location Lite)*
 
 KPNC Technology: Addressio: A simple way of identifying and retrieving IPv4/6 information...
 
