@@ -30,7 +30,7 @@ main {
 
 header {
     padding: 5px;
-    text-align: center;
+	text-align: center;
     border-bottom: solid black 1px;
 }
 
@@ -44,6 +44,20 @@ header img {
     text-decoration: none;
 }
 
+table {
+	width: 100%;
+}
+
+tbody {
+	margin: 0;
+	width: 100%;
+}
+
+tr {
+	margin: 0;
+	width: 100%;
+}
+
 p {
     margin: 10px;
     font-size: 14px;
@@ -51,8 +65,8 @@ p {
 }
 
 a {
+	color: #007ACC;
     cursor: pointer;
-    color: #007ACC;
     text-decoration: none;
 }
 
@@ -72,7 +86,7 @@ small {
 
 .data {
     border: 0;
-    width: 55%;
+    width: 100%;
     margin: 10px;
     float: right;
     line-height: 0;
