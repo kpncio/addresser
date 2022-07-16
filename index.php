@@ -1,5 +1,7 @@
 <?php
 
+ini_set('display_errors', 1);
+
 require 'ip.inc.php';
 require '2l.inc.php';
 
