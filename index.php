@@ -1,9 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require 'ip.inc.php';
 require '2l.inc.php';
 
@@ -216,23 +212,7 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 							</p>
 							
 							<p>
-								The information shown in the 'Provider Data' and 'Location Data' sections is provided by a <a href='https://www.ip2location.com' target='_blank'>IP2Location</a> database. Locational data is not guaranteed accurate (the inaccuracy can be seen <a href='https://www.ip2location.com/data-accuracy' target='_blank'>here</a>).
-							</p>
-						</div>
-					</div>
-				</div>
-
-				<div id='m10' class='modal'>
-					<div class='modal-content'>
-						<div class='modal-body'>
-							<span id='c10' class='close'>&times;</span>
-		
-							<p>
-								IP2Location Lite: <a href='https://lite.ip2location.com/' target='_blank'>Free Database</a>
-							</p>
-							
-							<p>
-								The information shown in the 'Provider Data', 'Proxy Data', and 'Location Data' sections is provided by a <a href='https://lite.ip2location.com' target='_blank'>IP2Location Lite</a> database. Locational data is not guaranteed accurate (the inaccuracy can be seen <a href='https://www.ip2location.com/data-accuracy' target='_blank'>here</a>).
+								The information shown in the 'Provider Data', 'Proxy Data', and 'Location Data' sections is provided by a <a href='https://www.ip2location.com' target='_blank'>IP2Location</a> database. Locational data is not guaranteed accurate (the inaccuracy can be seen <a href='https://www.ip2location.com/data-accuracy' target='_blank'>here</a>).
 							</p>
 						</div>
 					</div>
@@ -310,7 +290,7 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 		echo "
 			<tr>
 				<td><p>&rtrif; Listed</p></td>
-				<td><input type='text' class='data' value='true'/></td>
+				<td><input type='text' class='data' value='True'/></td>
 			</tr>
 			<tr>
 				<td><p>&rtrif; Type</p></td>
@@ -333,7 +313,7 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 		echo "
 			<tr>
 				<td><p>&rtrif; Listed</p></td>
-				<td><input type='text' class='data' value='false'/></td>
+				<td><input type='text' class='data' value='False'/></td>
 			</tr>
 		";
 	}
