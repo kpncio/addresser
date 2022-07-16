@@ -54,7 +54,7 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 	}
     echo "} \n";
 } else {
-	echo `
+	echo "
 		<!DOCTYPE html>
 		<html lang='en'>
 			<head>
@@ -304,10 +304,10 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 
 						<table>
 							<tbody>
-	`;
+	";
 
 	if ($proxy) {
-		echo `
+		echo "
 			<tr>
 				<td><p>&rtrif; Listed</p></td>
 				<td><input type='text' class='data' value='true'/></td>
@@ -328,17 +328,17 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 				<td><p>&rtrif; Threat</p></td>
 				<td><input type='text' class='data' value='{$ip2l[1][13]}'/></td>
 			</tr>
-		`;
+		";
 	} else {
-		echo `
+		echo "
 			<tr>
 				<td><p>&rtrif; Listed</p></td>
 				<td><input type='text' class='data' value='false'/></td>
 			</tr>
-		`;
+		";
 	}
 
-	echo `			
+	echo "			
 							</tbody>
 						</table>
 					</div>
@@ -398,7 +398,7 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 							
 					var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 					 	maxZoom: 18,
-					 	attribution: "Map Data & Imagery &copy; <a href='https://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a> & <a href='https://www.mapbox.com/' target='_blank'>Mapbox</a>",
+					 	attribution: \"Map Data & Imagery &copy; <a href='https://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a> & <a href='https://www.mapbox.com/' target='_blank'>Mapbox</a>\",
 					 	id: 'mapbox/dark-v10',
 					 	tileSize: 512,
 					 	zoomOffset: -1,
@@ -493,5 +493,5 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 				</script>
 			</body>
 		</html>
-	`;
+	";
 }
