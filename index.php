@@ -12,7 +12,7 @@ $browser = br();
 $ip2l = all(v6(ip(), false), dc(ip(), v6(ip(), false)));
 
 $proxy = false;
-if (count($ip2l[1]) > 3) {
+if ($decimal >= $ip2l[1][0] && $decimal <= $ip2l[1][1]) {
 	$proxy = true;
 }
 
@@ -41,8 +41,8 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
     echo "\t }, \"proxy\": { \n";
 	if ($proxy) {
 		echo "\t \t \"detected\": \"true\" \n";
-		echo "\t \t \"type\": \"{$ip2l[1][2]}\", \n";
 		echo "\t \t \"provider\": \"{$ip2l[1][7]}\", \n";
+		echo "\t \t \"type\": \"{$ip2l[1][2]}\", \n";
 		echo "\t \t \"usage\": \"{$ip2l[1][9]}\", \n";
 		echo "\t \t \"threat\": \"{$ip2l[1][13]}\", \n";
 	} else {
@@ -293,12 +293,12 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 				<td><input type='text' class='data' value='True'/></td>
 			</tr>
 			<tr>
-				<td><p>&rtrif; Type</p></td>
-				<td><input type='text' class='data' value='{$ip2l[1][2]}'/></td>
-			</tr>
-			<tr>
 				<td><p>&rtrif; Provider</p></td>
 				<td><input type='text' class='data' value='{$ip2l[1][7]}'/></td>
+			</tr>
+			<tr>
+				<td><p>&rtrif; Type</p></td>
+				<td><input type='text' class='data' value='{$ip2l[1][2]}'/></td>
 			</tr>
 			<tr>
 				<td><p>&rtrif; Usage</p></td>
