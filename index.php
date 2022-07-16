@@ -11,6 +11,11 @@ $browser = br();
 
 $ip2l = all(v6(ip(), false), dc(ip(), v6(ip(), false)));
 
+$proxy = false;
+if ($ip2l[1].count > 3) {
+	$proxy = true;
+}
+
 if ($browser == "unknown" || $_GET["api"] == "true") {
     header('Content-Type: text/plain');
 
@@ -30,13 +35,22 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
     echo "\t \t \"zip\": \"{$ip2l[0][8]}\", \n";
     echo "\t \t \"latitude\": \"{$ip2l[0][6]}\", \n";
     echo "\t \t \"longitude\": \"{$ip2l[0][7]}\", \n";
-    echo "\t \t \"cidr\": \"{$ip2l[1][2]}\", \n";
-    echo "\t \t \"asn\": \"{$ip2l[1][3]}\", \n";
-    echo "\t \t \"isp\": \"{$ip2l[1][4]}\" \n";
-    echo "\t } \n";
+    echo "\t \t \"cidr\": \"{$ip2l[2][2]}\", \n";
+    echo "\t \t \"asn\": \"{$ip2l[2][3]}\", \n";
+    echo "\t \t \"isp\": \"{$ip2l[2][4]}\" \n";
+    echo "\t }, \"proxy\": { \n";
+	if ($proxy) {
+		echo "\t \t \"detected\": \"true\" \n";
+		echo "\t \t \"type\": \"{$ip2l[1][2]}\", \n";
+		echo "\t \t \"provider\": \"{$ip2l[1][7]}\", \n";
+		echo "\t \t \"usage\": \"{$ip2l[1][9]}\", \n";
+		echo "\t \t \"threat\": \"{$ip2l[1][13]}\", \n";
+	} else {
+		echo "\t \t \"detected\": \"false\" \n";
+	}
     echo "} \n";
 } else {
-	echo "
+	echo `
 		<!DOCTYPE html>
 		<html lang='en'>
 			<head>
@@ -203,6 +217,22 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 						</div>
 					</div>
 				</div>
+
+				<div id='m10' class='modal'>
+					<div class='modal-content'>
+						<div class='modal-body'>
+							<span id='c10' class='close'>&times;</span>
+		
+							<p>
+								IP2Location Lite: <a href='https://lite.ip2location.com/' target='_blank'>Free Database</a>
+							</p>
+							
+							<p>
+								The information shown in the 'Provider Data', 'Proxy Data', and 'Location Data' sections is provided by a <a href='https://lite.ip2location.com' target='_blank'>IP2Location Lite</a> database. Locational data is not guaranteed accurate (the inaccuracy can be seen <a href='https://www.ip2location.com/data-accuracy' target='_blank'>here</a>).
+							</p>
+						</div>
+					</div>
+				</div>
 		
 				<main>
 					<header>
@@ -250,20 +280,65 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 							<tbody>
 								<tr>
 									<td><p>&rtrif; ISP<sup><a id='i6'>?</a></sup></p></td>
-									<td><input type='text' class='data' value='{$ip2l[1][4]}'/></td>
+									<td><input type='text' class='data' value='{$ip2l[2][4]}'/></td>
 								</tr>
 								<tr>
 									<td><p>&rtrif; CIDR<sup><a id='i7'>?</a></sup></p></td>
-									<td><input type='text' class='data' value='{$ip2l[1][2]}'/></td>
+									<td><input type='text' class='data' value='{$ip2l[2][2]}'/></td>
 								</tr>
 								<tr>
 									<td><p>&rtrif; ASN<sup><a id='i8'>?</a></sup></p></td>
-									<td><input type='text' class='data' value='{$ip2l[1][3]}'/></td>
+									<td><input type='text' class='data' value='{$ip2l[2][3]}'/></td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
-		
+
+					<br>
+					<div class='container'>
+						<p><strong>Proxy Data<sup><a id='i10'>?</a></sup>:</strong></p><br>
+
+						<table>
+							<tbody>
+	`;
+
+	if ($proxy) {
+		echo `
+			<tr>
+				<td><p>&rtrif; Listed</p></td>
+				<td><input type='text' class='data' value='true'/></td>
+			</tr>
+			<tr>
+				<td><p>&rtrif; Type</p></td>
+				<td><input type='text' class='data' value='{$ip2l[1][2]}'/></td>
+			</tr>
+			<tr>
+				<td><p>&rtrif; Provider</p></td>
+				<td><input type='text' class='data' value='{$ip2l[1][7]}'/></td>
+			</tr>
+			<tr>
+				<td><p>&rtrif; Usage</p></td>
+				<td><input type='text' class='data' value='{$ip2l[1][9]}'/></td>
+			</tr>
+			<tr>
+				<td><p>&rtrif; Threat</p></td>
+				<td><input type='text' class='data' value='{$ip2l[1][13]}'/></td>
+			</tr>
+		`;
+	} else {
+		echo `
+			<tr>
+				<td><p>&rtrif; Listed</p></td>
+				<td><input type='text' class='data' value='false'/></td>
+			</tr>
+		`;
+	}
+
+	echo `			
+							</tbody>
+						</table>
+					</div>
+
 					<br>
 					<div class='container'>
 						<p><strong>Location Data<sup><a id='i0'>?</a></sup>:</strong></p><br>
@@ -319,7 +394,7 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 							
 					var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 					 	maxZoom: 18,
-					 	attribution: \"Map Data & Imagery &copy; <a href='https://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a> & <a href='https://www.mapbox.com/' target='_blank'>Mapbox</a>\",
+					 	attribution: "Map Data & Imagery &copy; <a href='https://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a> & <a href='https://www.mapbox.com/' target='_blank'>Mapbox</a>",
 					 	id: 'mapbox/dark-v10',
 					 	tileSize: 512,
 					 	zoomOffset: -1,
@@ -367,6 +442,7 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 		
 					var m9 = document.getElementById('m9');
 					var i9 = document.getElementById('i9');
+					var i10 = document.getElementById('i10');
 					var i0 = document.getElementById('i0');
 					var c9 = document.getElementById('c9');
 		
@@ -395,6 +471,7 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 					c8.onclick = function() { m8.style.display = 'none'; }
 		
 					i9.onclick = function() { m9.style.display = 'block'; }
+					i10.onclick = function() { m9.style.display = 'block'; }
 					i0.onclick = function() { m9.style.display = 'block'; }
 					c9.onclick = function() { m9.style.display = 'none'; }
 		
@@ -412,5 +489,5 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 				</script>
 			</body>
 		</html>
-	";
+	`;
 }
