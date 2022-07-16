@@ -1,7 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-
 require 'ip.inc.php';
 require '2l.inc.php';
 
@@ -14,7 +12,7 @@ $browser = br();
 $ip2l = all(v6(ip(), false), dc(ip(), v6(ip(), false)));
 
 $proxy = false;
-if ($ip2l[1].count > 3) {
+if (count($ip2l[1]) > 3) {
 	$proxy = true;
 }
 
