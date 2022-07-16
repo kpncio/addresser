@@ -48,6 +48,7 @@ if ($browser == "unknown" || $_GET["api"] == "true") {
 	} else {
 		echo "\t \t \"detected\": \"false\" \n";
 	}
+	echo "\t } \n";
     echo "} \n";
 } else {
 	echo "
