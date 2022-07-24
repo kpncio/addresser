@@ -17,7 +17,10 @@ if ($decimal >= $ip2l[1][0] && $decimal <= $ip2l[1][1]) {
 }
 
 if ($browser == "unknown" || $_GET["api"] == "true") {
-    header('Content-Type: text/plain');
+    header('Content-Type: application/json;charset=UTF-8');
+	header('Access-Control-Allow-Headers: *');
+	header('Access-Control-Allow-Origin: *');
+	header('Status: 200');
 
     echo "{ \n";
     # echo "\t \t \"\": \"{$}\" \n";
